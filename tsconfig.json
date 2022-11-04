@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["ESNext", "DOM"],
+    "module": "commonjs",
+    "declaration": true,
+    "rootDir": "./",
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {},
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["packages/*/src"]
+}

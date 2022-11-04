@@ -1,0 +1,33 @@
+{
+  "name": "@rojer/boot",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "bin": {
+    "boot": "bin/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./es/index.js"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "minimist": "^1.2.7",
+    "pkg-exports": "^0.1.2",
+    "vite": "^3.2.2",
+    "vite-plugin-pages": "^0.27.1"
+  },
+  "peerDependencies": {
+    "vite": ">3.0.0",
+    "vue": ">=3.2.31"
+  },
+  "devDependencies": {
+    "unplugin-auto-import": "^0.11.4"
+  }
+}
