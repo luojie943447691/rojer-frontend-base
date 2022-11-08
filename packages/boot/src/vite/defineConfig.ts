@@ -9,10 +9,10 @@ import fs from 'fs-extra';
 const cwd = process.cwd();
 
 export interface IConfig {
-  vite: UserConfigExport;
-  pluginVueConfig: Parameters<typeof vue>[0];
-  pluginVueJsxConfig: Parameters<typeof vueJsx>[0];
-  pluginPagesConfig: Parameters<typeof Pages>[0];
+  vite?: UserConfigExport;
+  pluginVueConfig?: Parameters<typeof vue>[0];
+  pluginVueJsxConfig?: Parameters<typeof vueJsx>[0];
+  pluginPagesConfig?: Parameters<typeof Pages>[0];
 }
 
 function declareTemplate(selectors: string[]) {
