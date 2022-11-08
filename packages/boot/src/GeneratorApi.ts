@@ -1,6 +1,6 @@
 import { Dispatcher } from './Dispatcher';
 import { readFile, pathExists, ensureFile, writeFile } from 'fs-extra';
-import { Import, OriginSource } from './types';
+import { HtmlCodeType, Import, OriginSource } from './types';
 import { normalize, resolve } from 'path';
 import { pluginPrefix } from './constants';
 import { render } from 'ejs';
@@ -22,6 +22,14 @@ export class GeneratorApi {
     return this.dispatcher.cwd;
   }
 
+  get config() {
+    return this.dispatcher.config;
+  }
+
+  get pkg() {
+    return this.dispatcher.pkg;
+  }
+
   source(sources: OriginSource[], codes: Record<string, unknown>) {
     sources.forEach(d => {
       this.dispatcher.sources.push({
@@ -29,6 +37,10 @@ export class GeneratorApi {
         data: codes,
       });
     });
+  }
+
+  addHeadTemplate(type: HtmlCodeType, content: string) {
+    this.dispatcher.htmlCodes[type].push(content);
   }
 
   resolveTempPath(name: string) {

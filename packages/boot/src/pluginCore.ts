@@ -10,6 +10,19 @@ export const plugin: Plugin = {
       api.readFiles(resolveTemplate('index.html.ejs'), resolveTemplate('main.ts.ejs'), resolveTemplate('config.ts.ejs'))
     );
 
+    const config = api.config
+
+    // 往 htmlHead 天添加数据
+    api.addHeadTemplate('head',`<title>${config.title || api.pkg.description || ''}</title>`)
+
+    if(config.keywords){
+      api.addHeadTemplate('head', `<meta name="keywords" content="${config.keywords}">`)
+    }
+
+    if(config.description){
+      api.addHeadTemplate('head', `<meta name="description" content="${config.description}">`)
+    }
+
     api.source(
       [
         { path: api.resolveTempPath('index.html'), template: indexHtml, override: true },
@@ -34,6 +47,7 @@ export const plugin: Plugin = {
           .join('\n'),
       }
     );
+
   },
   async processor(api) {
     await api.writeToDisk()
