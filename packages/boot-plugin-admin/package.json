@@ -1,0 +1,17 @@
+{
+  "name": "@rojer/boot-plugin-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es.index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@celi/boot": ">=0.0.1"
+  },
+  "devDependencies": {
+    "@rojer/boot": "^1.0.0"
+  }
+}

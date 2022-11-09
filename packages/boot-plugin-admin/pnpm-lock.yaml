@@ -1,0 +1,7 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@rojer/boot': ^1.0.0
+
+dependencies:
+  '@rojer/boot': link:node_modules/@rojer/boot

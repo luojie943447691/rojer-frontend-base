@@ -11,10 +11,10 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "baseUrl": "./",
-    "paths": {},
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {}
   },
   "include": ["packages/*/src"],
-  "exclude": ["template/*.*"],
+  "exclude": ["template/*.*"]
 }

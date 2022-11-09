@@ -1,0 +1,16 @@
+import { defineComponent, ref } from 'vue'
+import { useRouter,RouterView } from 'vue-router'
+
+export default defineComponent({
+  setup() {
+    // 数据ready
+    const isReadyRef = ref()
+    const router = useRouter()
+
+    router.isReady().then(() => {
+      isReadyRef.value = true
+    })
+
+    return () => isReadyRef.value &&  <RouterView /> 
+  },
+})

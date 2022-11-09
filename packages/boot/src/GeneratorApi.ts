@@ -1,9 +1,10 @@
 import { Dispatcher } from './Dispatcher';
 import { readFile, pathExists, ensureFile, writeFile } from 'fs-extra';
 import { HtmlCodeType, Import, OriginSource } from './types';
-import { normalize, resolve } from 'path';
+import { resolve } from 'path';
 import { pluginPrefix } from './constants';
 import { render } from 'ejs';
+import { normalizePath } from 'vite';
 
 export class GeneratorApi {
   id!: string;
@@ -43,8 +44,22 @@ export class GeneratorApi {
     this.dispatcher.htmlCodes[type].push(content);
   }
 
+  // 添加 main.ts 的 imports 字段
+  addEntryImports(entry: Record<string, Import>) {
+    this.dispatcher.entryImports = entry;
+  }
+
+  // 添加 main.ts 的 普通代码
+  addEntryCodes(...codes: string[]) {
+    this.dispatcher.entryCodes.push(...codes);
+  }
+
   resolveTempPath(name: string) {
-    return normalize(resolve(this.dispatcher.temp, this.id.substring(pluginPrefix.length), name));
+    return this.normalizePath(resolve(this.dispatcher.temp, this.id.substring(pluginPrefix.length), name));
+  }
+
+  normalizePath(path: string) {
+    return normalizePath(path);
   }
 
   // 生成 main.ts 文件的导入部分

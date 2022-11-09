@@ -89,7 +89,7 @@ export function defineConfig(userConfig: IConfig): UserConfigFn {
       }),
       AutoImport({
         dts: true,
-        include: [/\.tsx$/],
+        include: [/\.[tj]sx$/, /\.vue$/, /\.vue\?vue/, /\.md$/],
         eslintrc: {
           enabled: true,
         },
