@@ -1,1 +1,1 @@
-export { defineConfig } from './vite/defineConfig';
+export * from './vite/defineConfig';

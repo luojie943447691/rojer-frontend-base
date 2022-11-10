@@ -13,5 +13,10 @@
       "require": "./lib/index.js",
       "import": "./es/index.js"
     }
+  },
+  "devDependencies": {
+    "naive-ui": "^2.33.5",
+    "vue": "^3.2.42",
+    "vue-router": "^4.1.6"
   }
 }

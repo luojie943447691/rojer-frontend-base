@@ -5,7 +5,7 @@
     "module": "commonjs",
     "declaration": true,
     "rootDir": "./",
-    "jsx": "react",
+    "jsx": "preserve",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
     "moduleResolution": "node",
@@ -15,6 +15,6 @@
     "skipLibCheck": true,
     "paths": {}
   },
-  "include": ["packages/*/src"],
+  "include": ["packages/*/src",],
   "exclude": ["template/*.*"]
 }

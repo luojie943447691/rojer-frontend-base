@@ -14,9 +14,9 @@
       "import": "./es/index.js"
     },
     "./vite": {
-      "type": "./es/vite/defineConfig.d.ts",
-      "require": "./lib/vite/defineConfig.js",
-      "import": "./es/vite/defineConfig.js"
+      "type": "./es/vite.d.ts",
+      "require": "./lib/vite.js",
+      "import": "./es/vite.js"
     }
   },
   "files": [

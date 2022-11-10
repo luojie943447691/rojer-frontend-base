@@ -12,6 +12,6 @@
     "@celi/boot": ">=0.0.1"
   },
   "devDependencies": {
-    "@rojer/boot": "^1.0.0"
+    "@rojer/boot": "workspace:*"
   }
 }
